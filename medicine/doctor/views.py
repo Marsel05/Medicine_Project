@@ -19,7 +19,7 @@ class DoctorViewSets(ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['education', 'hospital', 'speciality']
-
+    search_fields = ["license_number"]
 
 class MedicalRecordViewSets(ModelViewSet):
     queryset = MedicalRecord.objects.all()
